@@ -38,7 +38,7 @@ internal class Program
 
         for (int i = 0; i <= nums.Length - 1; i++)
         {
-            Console.WriteLine(nums[i] + "\t");
+            Console.Write(nums[i] + "\t");
         }
 
 

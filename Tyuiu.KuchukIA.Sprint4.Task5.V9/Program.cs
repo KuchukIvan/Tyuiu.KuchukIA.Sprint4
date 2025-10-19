@@ -1,21 +1,22 @@
 ﻿using System;
-using Tyuiu.KuchukIA.Sprint4.Task4.V22.Lib;
+using Tyuiu.KuchukIA.Sprint4.Task5.V9.Lib;
 internal class Program
 {
     static void Main(string[] args)
     {
 
+        Random rnd = new Random();
         DataService ds = new DataService();
         Console.Title = "Спринт #4 | Выполнил: И.А. Кучук | ПИНб-25-1";
         Console.WriteLine("***********************************************************************************************");
         Console.WriteLine("* Спринт #4                                                                                   *");
         Console.WriteLine("* Тема: Обработка структурных типов                                                           *");
-        Console.WriteLine("* Задание #4                                                                                  *");
-        Console.WriteLine("* Вариант #22                                                                                 *");
+        Console.WriteLine("* Задание #5                                                                                  *");
+        Console.WriteLine("* Вариант #9                                                                                  *");
         Console.WriteLine("* Выполнил: Кучук Иван Александрович |  ПИНб-25-1                                             *");
         Console.WriteLine("***********************************************************************************************");
         Console.WriteLine("* УСЛОВИЕ:                                                                                    *");
-        Console.WriteLine("* Заменить нечетные элементы массива на 0.                                                    *");
+        Console.WriteLine("* Найти количество положительных элементов.                                                   *");
         Console.WriteLine("***********************************************************************************************");
         Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                                            *");
         Console.WriteLine("***********************************************************************************************");
@@ -32,8 +33,7 @@ internal class Program
         {
             for (int j = 0; j < stolb; j++)
             {
-                Console.Write($"Введите {i}, {j} элемент массива: ");
-                matrix[i, j] = Convert.ToInt32(Console.ReadLine());
+                matrix[i, j] = rnd.Next(-4, 5);
             }
         }
 
@@ -55,17 +55,10 @@ internal class Program
         Console.WriteLine("* РЕЗУЛЬТАТ:                                                                                  *");
         Console.WriteLine("***********************************************************************************************");
 
-        int[,] res = ds.Calculate(matrix);
+        int res = ds.Calculate(matrix);
 
-        Console.WriteLine("Итоговый массив: ");
-        for (int i = 0; i < str; i++)
-        {
-            for (int j = 0; j < stolb; j++)
-            {
-                Console.Write($"{res[i, j]} \t");
-            }
-            Console.WriteLine();
-        }
+        Console.WriteLine("Количество положительных элементов: " + res);
+        
 
 
         Console.ReadKey();

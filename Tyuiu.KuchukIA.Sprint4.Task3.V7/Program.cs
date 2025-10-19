@@ -36,7 +36,7 @@ internal class Program
         {
             for (int j = 0; j < stolb; j++)
             {
-                Console.Write($"{matrix[i, j]} ");
+                Console.Write($"{matrix[i, j]} \t");
             }
             Console.WriteLine();
         }
